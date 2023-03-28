@@ -23,4 +23,16 @@ class UsersController < ApplicationController
    # end
     render({:template => "user_templates/show.html.erb"})
   end
+  def create 
+    #{"path_username"=>"cristina"}
+
+  input_user = params.fetch("input_username")
+
+    a_new_user = User.new
+    a_new_user.username = input_user 
+    a_new_user.save
+
+
+    render({:template => "user_templates/create.html.erb"})
+  end
 end
