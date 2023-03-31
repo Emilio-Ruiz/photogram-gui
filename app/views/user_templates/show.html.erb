@@ -18,9 +18,9 @@
 
   <form action="/insert_user_record">
   <label for="Username">Username</label>
-  <input id="Username" type="text" name="input_username" placeholder="Enter a username...">
+  <input id="Username" type="text" name="username" placeholder="Enter a username..." >Username</input>
 
-  <button type="submit">Update user</button>
+  <button type="submit" value="<%= @the_user.username%>">Update user</button>
   </form>
 </dl>
 

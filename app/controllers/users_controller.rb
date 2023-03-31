@@ -23,6 +23,10 @@ class UsersController < ApplicationController
    # end
     render({:template => "user_templates/show.html.erb"})
   end
+  def update
+    input_user = params.fetch("username")
+
+  end
   def create 
     #{"path_username"=>"cristina"}
 
