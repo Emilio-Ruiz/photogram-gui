@@ -64,22 +64,16 @@ class PhotosController < ApplicationController
 
     the_photo = matching_photos.at(0)
 
-  input_image = params.fetch("query_image")
-  input_caption = params.fetch("query_caption")
-  the_photo.image = input_image 
-  the_photo.caption = input_caption
+    input_image = params.fetch("query_image")
+    input_caption = params.fetch("query_caption")
+    the_photo.image = input_image 
+    the_photo.caption = input_caption
 
-  the_photo.save
+    the_photo.save
 
-  next_url = "/photos/" + a_new_photo_id.to_s
+    next_url = "/photos/" + a_new_photo_id.to_s
 
-  redirect_to("/photos" + a_new_photo.id.to_s)
-
-
-
-
-
-
+    redirect_to("/photos" + a_new_photo.id.to_s)
 
     render({:template => "photo_templates/update.html.erb"})
   end

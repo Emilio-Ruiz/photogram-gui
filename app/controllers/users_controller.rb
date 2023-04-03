@@ -32,7 +32,24 @@ class UsersController < ApplicationController
     a_new_user.username = input_user 
     a_new_user.save
 
-
+    #redirect_to("/users/#{a_new_user.username}" + a_new_user.id.to_s)
+    
+    
     render({:template => "user_templates/create.html.erb"})
   end
+  def update 
+
+
+    the_id = params.fetch("update_user")
+
+    matching_users = User.username({:id => the_id})
+
+    the_user = matching_users.at(0)
+
+    the_user.username = input_user
+
+    render({:template => "user_templates/update.html.erb"})
+  
+  end
+
 end

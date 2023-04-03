@@ -4,6 +4,16 @@
     <li><a href="/photos">photos</a></li>
   </ul>
 </nav>
+<form action="/insert_user_record">
+  <label for="Username">Username</label>
+  <input id="Username" type="text" name="input_username" placeholder="Enter a username...">
+
+  <button type="submit">Add user</button>
+  </form>
+
+<button>Update users</button>
+
+<input value="<%= @the_user.username%>"></input>
 
 <h1><%= @the_user.inspect %></h1>
 
@@ -46,3 +56,16 @@
   </tr>
 <% end %>
 </table>
+
+<form action="/insert_comment_record">
+  <label for="browser_photo_id">Photo ID</label>
+  <input id="browser_photo_id" type="text" value="773" name="input_photo_id">
+
+  <label for="author_id">Author ID</label>
+  <input id="author_id" type="text" name="input_author_id">
+
+  <label for="browser_comment">Comment</label>
+  <textarea id="browser_comment" name="input_body" placeholder="Enter a comment..."></textarea>
+
+  <button>Add comment</button>
+</form>
