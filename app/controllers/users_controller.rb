@@ -13,13 +13,13 @@ class UsersController < ApplicationController
 
     matching_usernames = User.where({ :username => url_username })
 
-    @the_user = matching_usernames.at(0)
+    @the_user = matching_usernames.first
 
     #if the_user == nil 
-    #  redirect_to("/")
+     # redirect_to("/users")
     #else 
       #render({:template => "user_templates/show.html.erb"})
-
+     # end
    # end
     render({:template => "user_templates/show.html.erb"})
   end

@@ -71,10 +71,17 @@ class PhotosController < ApplicationController
 
     the_photo.save
 
-    next_url = "/photos/" + a_new_photo_id.to_s
 
-    redirect_to("/photos" + a_new_photo.id.to_s)
+   # next_url = "/photos/" + a_new_photo_id.to_s
 
-    render({:template => "photo_templates/update.html.erb"})
+    #redirect_to("/photos/<%a_new_photo%>")
+
+   # redirect_to("/photos/#{the_photo.id}")
+      
+    redirect_to("/photos")
+
+    #render({:template => "photo_templates/update.html.erb"})
   end
 end
+
+
