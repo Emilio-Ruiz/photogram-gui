@@ -12,9 +12,13 @@ class UsersController < ApplicationController
 
     matching_usernames = User.where({:username => url_username})
 
-    @the_user = matching_usernames.at(0)
+    @the_user = matching_usernames.first
 
     render({:template => "user_templates/show.html.erb"})
   
   end
+  def update
+    render({:template => "user_templates/update.html.erb"})
+  end
+  
 end
