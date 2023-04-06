@@ -22,6 +22,8 @@ class UsersController < ApplicationController
      # end
    # end
     render({:template => "user_templates/show.html.erb"})
+
+    #redirect_to("users/<%= @the_user %>")
   end
   def create 
     #{"path_username"=>"cristina"}
@@ -32,10 +34,10 @@ class UsersController < ApplicationController
     a_new_user.username = input_user 
     a_new_user.save
 
-    #redirect_to("/users/#{a_new_user.username}" + a_new_user.id.to_s)
+    redirect_to("/users/#{a_new_user.username}")
     
     
-    render({:template => "user_templates/create.html.erb"})
+    #render({:template => "user_templates/create.html.erb"})
   end
   def update 
 
