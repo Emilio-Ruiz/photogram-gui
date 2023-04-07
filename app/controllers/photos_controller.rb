@@ -16,6 +16,8 @@ class PhotosController < ApplicationController
     @the_photo = matching_photos.at(0)
 
     render({:template => "photo_templates/show.html.erb"})
+    
+    #redirect_to("/photos/<%= @the_photo.id %>")
   end 
   def baii 
 
@@ -48,7 +50,7 @@ class PhotosController < ApplicationController
 
     a_new_photo.save 
 
-    render({:template => "photo_templates/create.html.erb"})
+    #render({:template => "photo_templates/create.html.erb"})
 
     #redirect_to("/photos/" + a_new_photo.id.to_s)
   end
@@ -83,5 +85,3 @@ class PhotosController < ApplicationController
     #render({:template => "photo_templates/update.html.erb"})
   end
 end
-
-
