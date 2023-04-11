@@ -6,8 +6,17 @@
   <dd><%= @the_user.id %></dd>
   <dt>Edit user</dt>
   <dd>form goes here</dd>
-</dl>
 
+  <form action="/insert_user_record/<%@the_user.id%>%">
+  <label for="browser_username">Username</label>
+  <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="#{@the_user.username}">
+  <button>Update user</button>
+  </form>
+
+  
+</dl>
+<label>
+</label>
 <h2>Own photos (<%= @the_user.own_photos %>)</h2>
 
 <table border="1">
