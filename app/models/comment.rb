@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #  author_id  :integer
 #  photo_id   :integer
-#
+# 
 
 class Comment < ApplicationRecord
   validates(:commenter, { :presence => true })

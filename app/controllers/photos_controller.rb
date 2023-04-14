@@ -63,15 +63,34 @@ class PhotosController < ApplicationController
 
     the_photo = matching_photos.at(0)
 
-    input_image = params.fetch("query_image")
-    input_caption = params.fetch("query_caption")
+    the_photo.image = params.fetch("query_image")
+    the_photo.caption = params.fetch("query_caption")
 
     the_photo.save
 
     render({:template => "photo_templates/update.html.erb"})
 
-    next_url = "/photos/a_new_photo.id."
+    next_url = "/photos/#{the_photo.id}"
 
     redirect_to(next_url)
   end
+  def comment 
+
+    comment_id = params.fetch("modify_id")
+    
+    a_new_comment = Comment.new 
+    a_new_comment.save 
+
+    comment_url = "/photos/#{a_new_photo.id}"
+
+    redirect_to(comment_url)
+
+  end
+
+
+  # Make a new action
+  # Create a comment
+  # Retrieve the values from the params hash, assign them
+  # Save
+  # Redirect to photo details page
 end
